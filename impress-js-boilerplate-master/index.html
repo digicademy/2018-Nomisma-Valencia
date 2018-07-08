@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Converting Germany’s Roman Coin Finds to LOD – an exemplary workflow for the FMRD project</title>
+
+        <!-- meta information -->
+        <meta name="author" content="AUTHOR" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=1024" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
+        <!-- favicons -->
+        <link rel="shortcut icon" href="resources/img/favicon.png" />
+        <link rel="apple-touch-icon" href="resources/img/apple-touch-icon.png" />
+
+        <!-- CSS reset and grid -->
+        <link href="vendor/normalize/normalize-4.1.1.css" rel="stylesheet" />
+        <link href="vendor/skeleton/skeleton-2.0.4.css" rel="stylesheet" />
+
+        <!-- fonts -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,600italic,400italic,700italic,800,800italic&amp;subset=latin,latin-ext"
+            rel="stylesheet" type="text/css" />
+
+        <!-- presentation styles -->
+        <link href="resources/css/style.css" rel="stylesheet" />
+
+        <!-- other libraries -->
+
+        <!-- chartist.js -->
+        <link rel="stylesheet" href="vendor/chartist/chartist.min-0.9.7.css" />
+
+        <!-- codemirror -->
+        <link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css" />
+        <link rel="stylesheet" href="resources/css/codemirror-sparql.css" />
+
+        <!-- highlight.js -->
+        <link rel="stylesheet" href="vendor/highlight/styles/default.css" />
+
+        <!-- magnific popup -->
+        <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup-1.1.0.css" />
+
+        <!-- js libs that need to be in head -->
+
+        <!-- greuler -->
+        <script src="vendor/d3/d3-3.5.6.js"></script>
+        <script src="vendor/cola/cola.v3.min.js"></script>
+        <script src="vendor/greuler/greuler-0.5.5.min.js"></script>
+
+        <!-- html5 dataset shim for IE -->
+        <script src="vendor/impress/html5-dataset.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+        <div class="fallback-message">
+            <p> Your browser <strong>doesn't support the features required</strong> by
+                impress.mod.js, so you are presented with a simplified version of this presentation. </p>
+            <p> For the best experience please use the latest <strong>Chrome</strong>,
+                    <strong>Safari</strong> or <strong>Firefox</strong> browser. </p>
+        </div>
+        <div id="impress">
+            <div class="step">
+                <h4><strong id="today"></strong> | <a href="http://www.adwmainz.de/startseite.html">Akademie der Wissenschaften und der Literatur | Mainz</a></h4>
+                <script>
+	var dt = new Date();
+	document.getElementById("today").innerHTML = ("0" + dt.getDate()).slice(-2) + "." + ("0" + (dt.getMonth()+1)).slice(-2) + "." + dt.getFullYear();
+</script>
+                <h4><strong><a href="http://www.museuprehistoriavalencia.es/web_mupreva/actividades/664/en">The 7th Joint Meeting of Nomisma.org and ECFN 2018</a></strong></h4>
+                <h1 class="down-100">Converting Germany’s Roman Coin Finds to LOD</h1>
+                <h2 class="red up-25">an exemplary workflow for the FMRD project</h2>
+                <h5>
+                    <strong><a href="http://www.adwmainz.de/mitarbeiterinnen/profil/timo-kissinger.html">Author: Timo
+                        Kissinger – Akademie Mainz</a></strong> | 
+                    <img src="resources/img/Twitter_bird_logo_2012.svg" alt="Twitter" class="twitter-icon" />
+                    <a href="https://twitter.com/digicademy" title="Digital Academy on Twitter">@digicademy</a> |
+                    <img src="resources/img/Octicons-mark-github.svg" alt="Twitter" class="gh-icon" />
+                    <a href="https://github.com/digicademy/" title="Digital Academy on GitHub">digicademy</a> |
+                    <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>
+                </h5>
+            </div>
+            <div class="step">
+                <h2>Workflow</h2>
+                <div class="mfp-lightbox">
+                    <a href="resources\img\uebersicht.png">
+                        <img src="resources\img\uebersicht.png" alt="Workflow" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <h2>The FMRD project</h2>
+                <ul>
+                    <li>„Fundmünzen der Römischen Zeit in Deutschland“ (FMRD) was created in 1953 to record all Roman coins found in Germany</li>
+                    <li>first Volume published 1960</li>
+                    <li>from 1986 funded by the Academy of Sciences and Literature | Mainz</li>
+                    <li>completed in 2009</li>
+                    <li>the volumes are a rich archaeological and numismatic resource</li>
+                </ul>
+            </div>
+            <div class="step">
+                <h2>PDF</h2>
+                <div class="mfp-lightbox">
+                    <a href="resources\img\uebersicht1.png">
+                        <img src="resources\img\uebersicht1.png" alt="PDF" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <h2>PDF</h2>
+                <div class="mfp-lightbox">
+                    <a href="resources\img\ScreenshotPDF_Galba.png">
+                        <img src="resources\img\ScreenshotPDF_Galba.png" alt="PDF" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <h2>XML</h2>
+                <div class="mfp-lightbox">
+                    <a href="resources\img\uebersicht2.png.png">
+                        <img src="resources\img\uebersicht2.png" alt="XML" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <h2>XML</h2>
+                <div class="mfp-lightbox">
+                    <a href="resources\img\ScreenshotXML_extrahiertGezoomt.jpg">
+                        <img src="resources\img\ScreenshotXML_extrahiertGezoomt.jpg" alt="XML"
+                            style="width: auto; height: 600px;" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <h2>CSV</h2>
+                <div class="mfp-lightbox">
+                    <a href="resources\img\uebersicht3.png">
+                        <img src="resources\img\uebersicht3.png" alt="CSV" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <h2>CSV</h2>
+                <div class="mfp-lightbox">
+                    <a href="resources\img\ScreenshotCSVGezoomt.jpg">
+                        <img src="resources\img\ScreenshotCSVGezoomt.jpg" alt="CSV" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <h2>compliant TEI/XML</h2>
+                <div class="mfp-lightbox">
+                    <a href="resources\img\uebersicht4.png">
+                        <img src="resources\img\uebersicht4.png" alt="compliant TEI/XML"
+                         />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <h2>compliant TEI/XML</h2>
+                <div class="mfp-lightbox">
+                    <a href="resources\img\ScreenshotXML_fertigGezoomt.jpg">
+                        <img src="resources\img\ScreenshotXML_fertigGezoomt.jpg"
+                            alt="compliant TEI/XML" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <h2>LOD Model</h2>
+                <div class="mfp-lightbox">
+                    <a href="resources\img\uebersicht5.png">
+                        <img src="resources\img\uebersicht5.png" alt="LOD Model" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <h2>LOD Model</h2>
+                <div class="mfp-lightbox">
+                    <a href="resources\img\ScreenshotNomismaOnt.jpg">
+                        <img src="resources\img\ScreenshotNomismaOnt.jpg" alt="LOD Model" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <h2>XTriples / RDF</h2>
+                <div class="mfp-lightbox">
+                    <a href="resources\img\uebersicht6.png">
+                        <img src="resources\img\uebersicht6.png" alt="XTriples / RDF" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <h2>XTriples / RDF</h2>
+                <div class="mfp-lightbox">
+                    <a href="resources\img\ScreenshotXTriplesMitStatement.jpg">
+                        <img src="resources\img\ScreenshotXTriplesMitStatement.jpg" alt="XTriples / RDF" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <h2>rdf4j Triple Store</h2>
+                <div class="mfp-lightbox">
+                    <a href="resources\img\uebersicht7.png">
+                        <img src="resources\img\uebersicht7.png" alt="rdf4j Triple Store"
+                         />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <h2>rdf4j Triple Store</h2>
+                <div class="mfp-lightbox">
+                    <a href="resources\img\ScreenshotRdf4jErgebnisGezoomed.jpg">
+                        <img src="resources\img\ScreenshotRdf4jErgebnisGezoomed.jpg"
+                            alt="rdf4j Triple Store" style="width: auto; height: 800px;" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <h2>Visualization with sgvizler and analysis</h2>
+                <div class="mfp-lightbox">
+                    <a href="resources\img\uebersicht8.png">
+                        <img src="resources\img\uebersicht8.png"
+                            alt="Visualization with sgvizler and analysis" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <div class="mfp-lightbox">
+                    <a href="resources\img\ScreenshotRdf4jSparqlGezoomt.jpg">
+                        <img src="resources\img\ScreenshotRdf4jSparqlGezoomt.jpg"
+                            alt="Visualization with sgvizler and analysis" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <div class="mfp-lightbox">
+                    <a href="resources\img\firstCentBC.jpg">
+                        <img src="resources\img\firstCentBC.jpg"
+                            alt="Visualization with sgvizler and analysis" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <div class="mfp-lightbox">
+                    <a href="resources\img\firstAndSecondCent.jpg">
+                        <img src="resources\img\firstAndSecondCent.jpg"
+                            alt="Visualization with sgvizler and analysis" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <div class="mfp-lightbox">
+                    <a href="resources\img\thirdAndfourthCen.jpg">
+                        <img src="resources\img\thirdAndfourthCen.jpg"
+                            alt="Visualization with sgvizler and analysis" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <div class="mfp-lightbox">
+                    <a href="resources\img\fifthCen.jpg">
+                        <img src="resources\img\fifthCen.jpg"
+                            alt="Visualization with sgvizler and analysis" />
+                    </a>
+                </div>
+            </div>
+            <div class="step">
+                <div class="centered">
+                    <h1>F I N I S</h1>
+                    <h2>Thank you</h2>
+                </div>
+            </div>
+            <div class="step">
+                <h2>Literature &amp; Software</h2>
+                <h4>Literature and Links</h4>
+                <ul class="small pull-up">
+                    <li>
+                        <a href="https://collections.museumvictoria.com.au/items/73035">Coin of
+                            Galba</a>
+                    </li>
+                    <li>
+                        <a href="http://nomisma.org/datasets">KENOM data set from nomisma.org (CC BY-NC-ND 4.0)</a>
+                    </li>
+                    <li>
+                        <a
+                            href="http://www.adwmainz.de/projekte/fundmuenzen-der-antike-fda/publikationen/fmrd/fmrd-iv-32-stadt-trier-die-sog-roemerbauten-3003-3020.html"
+                            >M. Radnoti-Alföldi, Die Fundmünzen der römischen Zeit in Deutschland IV
+                            3/2. Stadt und Reg.-Bez. Trier. Die Sog. Römerbauten (Mainz 2006).</a>
+                    </li>
+                    <li>
+                        <a href="http://nomisma.org/">nomisma.org</a>
+                    </li>
+                    <li>
+                        <a href="http://rdf4j.org/">rdf4j</a>
+                    </li>
+                    <li>
+                        <a href="http://mgskjaeveland.github.io/sgvizler/">sgvizler</a>
+                    </li>
+                    <li>
+                        <a href="http://xtriples.spatialhumanities.de/index.html">XTriples</a>
+                    </li>
+                </ul>
+                <h4>Presentation software</h4>
+                <ul class="small pull-up">
+                    <li>
+                        <a href="https://github.com/impress/impress.js">impress.js</a>
+                    </li>
+                </ul>
+                <h4>License</h4>
+                <ul class="small pull-up">
+                    <li> License: <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY
+                            4.0</a>, Timo Kissinger </li>
+                </ul>
+            </div>
+        </div>
+        <!-- js libs -->
+        <!-- chartist -->
+        <script src="vendor/chartist/chartist.min-0.9.7.js"></script>
+        <!-- codemirror -->
+        <script src="vendor/codemirror/lib/codemirror.js"></script>
+        <script src="vendor/codemirror/mode/sparql/sparql.js"></script>
+        <!-- highlight -->
+        <script src="vendor/highlight/highlight.pack-9.3.0.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <!-- jquery -->
+        <script src="vendor/jquery/jquery-1.11.0.min.js"></script>
+        <!-- magnific popup -->
+        <script src="vendor/magnific-popup/jquery.magnific-popup.min-1.1.0.js"></script>
+        <script src="resources/js/magnific-popup.lightbox.js"></script>
+        <!-- sgvizler -->
+        <script src="vendor/sgvizler/sgvizler.fork.js"></script>
+        <!-- impress.mod.js -->
+        <script src="vendor/impress/impress.fork.js"></script>
+        <script src="vendor/impress/impress-slidenum.js"></script>
+        <script>
+        var obj = impress();
+        obj.init();
+        initSlideNo(obj);
+    </script>
+    </body>
+</html>
